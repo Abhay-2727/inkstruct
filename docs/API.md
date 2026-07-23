@@ -32,6 +32,13 @@ If a future version adds multi-user support or a mobile client, these same funct
 
 ---
 
+### `extract_text(file) -> str`
+- **Purpose:** Routes an uploaded file to the correct extractor based on its filename extension.
+- **Request:** `file` — a Streamlit `UploadedFile` object.
+- **Response:** Extracted plain text string.
+- **Error cases:** Raises `ValueError` for unsupported extensions (defensive — Streamlit's uploader already restricts selectable types).
+- **Used by:** `app.py`, as the single entry point into file parsing.
+
 ## Module: `file_parser.py`
 
 ### `extract_text_from_txt(file) -> str`
